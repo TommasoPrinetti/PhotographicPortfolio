@@ -4,52 +4,52 @@ export let capitoliFoto = [
     {
        titolo: "Monica & Paolo",
        location: "San Colombano al Lambro",
-       imgSrc: "images//MonicaEPaolo/thumb.jpg",
+       imgSrc: "MonicaEPaolo",
     },
     {
        titolo: "Lucia & Stefano",
        location: "Verona città metropolitana",
-       imgSrc: "",
+       imgSrc: "LuciaEStefano",
     },
     {
        titolo: "Lucia & Luca",
        location: "Verona città metropolitana",
-       imgSrc: "",
+       imgSrc: "LuciaELuca",
     },
     {
        titolo: "At Carol Rama’s",
        location: "Torino, Casa museo Carol Rama",
-       imgSrc: "",
+       imgSrc: "AtCarolRama",
     },
     {
        titolo: "Sinking",
        location: "Milano, Studi PoliMi",
-       imgSrc: "",
+       imgSrc: "Sinking",
     },
     {
        titolo: "Atacama",
        location: "Cave di Malnate",
-       imgSrc: "",
+       imgSrc: "Atacama",
     },
     {
        titolo: "Corporate events",
        location: "Mixed locations",
-       imgSrc: "",
+       imgSrc: "Corporate",
     },
     {
        titolo: "Reportages",
        location: "Mixed locations",
-       imgSrc: "",
+       imgSrc: "Reportages",
     },
     {
        titolo: "Lazza, Re Mida",
        location: "Alcatraz, 2019",
-       imgSrc: "",
+       imgSrc: "LazzaReMida",
     },
     {
        titolo: "Curriculum vitae",
        location: "",
-       imgSrc: "",
+       imgSrc: "Curriculum",
     }
 ]
 
@@ -64,7 +64,7 @@ export let capitoliFoto = [
     </div>
     <div class="indexVoicesContainer"> 
         {#each capitoliFoto as capitoloFoto, index}
-                <a class="singleIndexVoice" href="/"> 
+            <a class="singleIndexVoice">
                     <p class="dritto">
                         {index +1}.
                     </p>
@@ -79,9 +79,11 @@ export let capitoliFoto = [
                     </p>
                 </a>
                 <div class="absoluteImgContainer">
-                    <img class="absoluteImg" src="{capitoloFoto.imgSrc}" alt={capitoloFoto.titolo}>
+                    <img class="absoluteImg" src="images/{capitoloFoto.imgSrc}/thumb.jpg" alt={capitoloFoto.titolo}>
                 </div>
         {/each}
     </div>
+
+    
 </div>
 
