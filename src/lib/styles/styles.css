@@ -1,0 +1,144 @@
+
+
+:root {
+
+    --BRAND-ORANGE: #FF5129;
+}
+
+body {
+    color: var(--BRAND-ORANGE);
+    scrollbar-width: 0px;
+    scrollbar-color: alpha;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    position: relative;
+    margin: 0px;
+}
+
+
+@font-face {
+    font-family: 'Avara';
+    src: url('/FONTS/Avara-Bold.woff2') format('woff2');
+    font-weight: bold; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avara';
+    src: url('/FONTS/Avara-Black.woff2') format('woff2');
+    font-weight: black; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avara';
+    src: url('/FONTS/Avara-BoldItalic.woff2') format('woff2');
+    font-weight: bold; 
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CormorantGaramond';
+    src: url('/Users/tommasoprinetti/Documents/PORTFOLIO_FOTO_SVELTE/PhotoPortfolio/static/FONTS/CormorantGaramond-SemiBold.ttf') format('Truetype');
+    font-weight: bold; 
+    font-style: italic;
+}
+
+.obliqueo {
+    font-family: Avara, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    margin: 0px;
+}
+
+.dritto {
+    font-family: Avara, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    margin: 0px;
+}
+
+.nome {
+    font-family: Avara, Helvetica, sans-serif;
+    font-weight: black;
+    font-style: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+.testi {
+    font-family: CormorantGaramond, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    margin: 0px;
+}
+
+.indexContainer {
+    display: inline-flex;
+    height: 100vh;
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    flex-shrink: 0;
+    z-index: 10;
+    position: relative;
+}
+
+.indexVoicesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    opacity: 100%;
+}
+
+.singleIndexVoice {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    color: var(--BRAND-ORANGE);
+    opacity: 40%;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.singleIndexVoice:hover {
+    opacity: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    color: none;
+}
+
+.absoluteImgContainer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    opacity: 0%;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -10;
+}
+
+.absoluteImg {
+    width: 20vw;
+    height: auto;
+    object-fit: cover;
+}
+
+.singleIndexVoice:hover + .absoluteImgContainer  {
+    opacity: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
