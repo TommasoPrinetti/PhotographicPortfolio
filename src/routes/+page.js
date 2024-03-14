@@ -55,8 +55,6 @@ let capitoliFoto = [
     }
 ];
 
-//serve cambiare il parametro titolo sennò l'oggetto diventa titolo.titolo e fa confusione
-
 export async function load({ params }) {
 
    return {

@@ -3,9 +3,28 @@
 const capitoliFoto = []; 
 export let data;
 
-// console.log("IndexData", data)
+import websiteImage from "$lib/biopic.jpg"
+
+let websiteUrl = "https://photographic-portfolio.vercel.app/";
+
+let bioText = "Tommaso Prinetti, Photographer";
 
 </script>
+
+<svelte:head>
+     <!-- Meta tags -->
+     <meta name="description" content="Tommaso Prinetti is a Photographer and Designer from Milan, Italy">
+     <meta name="keywords" content="Photography, Portfolio, Photographer, Corporate Photography, Reportage Photography, Wedding Photography">
+     <meta property="og:title" content={bioText}>
+     <meta property="og:description" content="Tommaso Prinetti is a Photographer and Designer from Milan, Italy">
+     <meta property="og:image" content={websiteImage}>
+     <meta property="og:url" content={websiteUrl}>
+     <meta property="og:type" content="portfolio">
+     
+     <!-- Favicon -->
+     <link rel="icon" href="/favicon.ico">
+
+</svelte:head>
 
 <div class="indexContainer">
     <div>
@@ -31,7 +50,7 @@ export let data;
                     </p>
             </a>
                 <div class="absoluteImgContainer">
-                    <img class="absoluteImg" src="images/{capitoloFoto.titolo}/thumb.jpg" alt={capitoloFoto.titolo}>
+                    <enhanced:img class="absoluteImg" src="images/{capitoloFoto.titolo}/thumb.jpg" alt={capitoloFoto.titolo}>
                 </div>
         {/each}
     </div>

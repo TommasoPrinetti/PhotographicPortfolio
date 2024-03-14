@@ -4,9 +4,21 @@
 
     export let data;
 
+    let aboutText = "About It";
+
+    let currentIndex = 1;
+
     let hideDescription = true;
 
+    import websiteImage from "$lib/biopic.jpg"
+
+    let websiteUrl = "https://photographic-portfolio.vercel.app/";
+
+    let bioText = "Tommaso Prinetti, Photographer";
+
     let resizeImg = false;
+
+    let imgSrc = `/images/${data.props.titolo.titolo}/Gallery/img${currentIndex}.jpg`;
 
     async function toggleDescription() {
         hideDescription = !hideDescription;
@@ -14,15 +26,21 @@
 
     async function toggleImgSize() {
         resizeImg = !resizeImg;
+
+        if (resizeImg === true) {
+        aboutText = "Close about";
+        } else if (resizeImg === false) {
+            aboutText = "About It";
+        }
     }
 
     async function toggleAll() {
         toggleDescription();
         toggleImgSize();
+        console.log("clicked");
     }
 
-    let currentIndex = 1;
-    const maxIndex = 20;
+    const maxIndex = 10;
 
     const updateIndex = (increment) => {
         currentIndex += increment;
@@ -31,6 +49,8 @@
         } else if (currentIndex > maxIndex) {
             currentIndex = 1;
         }
+        console.log("IndexUpdated");
+        currentIndex = currentIndex;
     };
 
     const handleNavigation = async (url) => {
@@ -56,37 +76,24 @@
         });
     });
 
-
 </script>
 
-<!-- svelte-ignore a11y-missing-attribute -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- svelte-ignore a11y-click-events-have-key-events -->
+<svelte:head>
+     <!-- Meta tags -->
+     <meta name="description" content="Tommaso Prinetti is a Photographer and Designer from Milan, Italy">
+     <meta name="keywords" content="Photography, Portfolio, Photographer, Corporate Photography, Reportage Photography, Wedding Photography">
+     <meta property="og:title" content={bioText}>
+     <meta property="og:description" content="Tommaso Prinetti is a Photographer and Designer from Milan, Italy">
+     <meta property="og:image" content={websiteImage}>
+     <meta property="og:url" content={websiteUrl}>
+     <meta property="og:type" content="portfolio">
+     
+     <!-- Favicon -->
+     <link rel="icon" href="/favicon.ico">
+
+</svelte:head>
 
 
-
-
-<div class="indexContainer">
-    <div>
-        <p class="nome">
-            TOMMASO PRINETTI <br>
-            BASED IN MILAN, ITALY
-        </p>
-    </div>
-
-    <div class="indexVoicesContainer isPage">
-        {#if data && data.props && data.props.capitoliFoto}
-            {#each data.props.capitoliFoto as capitoloFoto, index}
-            <a class="singleIndexVoice {capitoloFoto.titolo === data.props.titolo.titolo ? 'isSlug' : 'isNotSlug'}" on:click={() => handleNavigation(`/titoli/${capitoloFoto.titolo}`)}>
-                <p class="dritto">{index + 1}.</p>
-                <p class="obliqueo">{capitoloFoto.titolo}</p>
-                <p class="dritto">-</p>
-                <p class="dritto">{capitoloFoto.location}</p>
-            </a>
-            {/each}
-        {/if}
-    </div>
-</div>
 
 <div class="galleryDescriptionMaster"> 
     <div class="DescriptionContainer">
@@ -99,7 +106,29 @@
 </div>
 
 <div class="galleryGrandfather">
+    
     <div class="galleryMaster">
+        <div class="indexContainer">
+            <div>
+                <p class="nome">
+                    TOMMASO PRINETTI <br>
+                    BASED IN MILAN, ITALY
+                </p>
+            </div>
+        
+            <div class="indexVoicesContainer isPage">
+                {#if data && data.props && data.props.capitoliFoto}
+                    {#each data.props.capitoliFoto as capitoloFoto, index}
+                    <a class="singleIndexVoice {capitoloFoto.titolo === data.props.titolo.titolo ? 'isSlug' : 'isNotSlug'}" on:click={() => handleNavigation(`/titoli/${capitoloFoto.titolo}`)}>
+                        <p class="dritto">{index + 1}.</p>
+                        <p class="obliqueo">{capitoloFoto.titolo}</p>
+                        <p class="dritto">-</p>
+                        <p class="dritto">{capitoloFoto.location}</p>
+                    </a>
+                    {/each}
+                {/if}
+            </div>
+        </div>
 
         <a role="button" class="galleryArrowContainer" on:click={() => { updateIndex(-1) }} on:keydown={(event) => { if (event.key === 'ArrowLeft') { updateIndex(-1) } }} tabindex="0" aria-keyshortcuts="ArrowLeft" aria-label="Previous">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="37" viewBox="0 0 24 37" fill="none">
@@ -108,7 +137,7 @@
         </a>
         
         <div class="galleryImgContainer {resizeImg ? 'Active' : ''}">
-            <img src={`/images/${data.props.titolo.titolo}/Gallery/img${currentIndex}.jpg`} alt="">
+            <img src={imgSrc} alt="">
         </div>
     
         <a role="button" class="galleryArrowContainer" on:click={() => { updateIndex(1) }} on:keydown={(event) => { if (event.key === 'ArrowRight') { updateIndex(1) } }} tabindex="0" aria-keyshortcuts="ArrowRight" aria-label="Next">
@@ -118,7 +147,7 @@
         </a>
     </div>
     <a class="aboutContainer" on:click={toggleAll}>
-        <p class="descrizioni">About it</p>
+        <p class="descrizioni">{aboutText}</p>
     </a>
 
     <div class="counterContainer">

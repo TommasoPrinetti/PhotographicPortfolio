@@ -179,6 +179,18 @@ a {
     height: 100vh;
 }
 
+.galleryMaster > .indexContainer {
+    display: inline-flex;
+    height: 100vh;
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    flex-shrink: 0;
+    z-index: 5;
+    position: absolute;
+}
+
 .galleryMaster {
     width: 100vw;
     height: 100vh;
@@ -189,13 +201,14 @@ a {
     gap: 0px;
     z-index: 5;
     position: relative;
+    justify-content: space-between;
 }
 
 .galleryArrowContainer {
     display: flex;
     width: 70px;
     height: 100vh;
-    padding: 0px 20px;
+    padding: 0px 0px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -209,17 +222,17 @@ a {
 
 .galleryImgContainer {
     display: flex;
-    width: 100%;
+    max-width: 80vw;
     height: 100vh;
-    padding: 0px 36px 0px 35px;
     justify-content: center;
     align-items: center;
     flex: 1 0 0;
     user-select: none;
+    z-index: -40;
 }
 
 .galleryImgContainer > img {
-    width: 100%;
+    width: auto;
     height: 100%;
     opacity: 100%;
     object-fit: contain;
