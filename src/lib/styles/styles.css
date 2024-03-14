@@ -38,8 +38,6 @@ body {
     font-style: italic;
 }
 
-
-
 p {
     margin: 0px;
     padding: 0px;
@@ -85,15 +83,7 @@ p {
     font-style: italic;
 }
 
-.descrizioni {
-    color: var(--BRAND-ORANGE, #FF5129);
-    font-feature-settings: 'cv02' on, 'ss14' on, 'ss03' on, 'ss06' on, 'ss10' on, 'dlig' on, 'ss04' on;
-    font-family: 'CormorantGaramond';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
+
 
 .indexContainer {
     display: inline-flex;
@@ -115,6 +105,8 @@ p {
     opacity: 100%;
 }
 
+
+
 .singleIndexVoice {
     display: flex;
     align-items: center;
@@ -130,9 +122,27 @@ p {
     transition: opacity 0.3s ease-in-out;
 }
 
+.singleIndexVoice.isSlug {
+    opacity: 100%;
+}
+
+.singleIndexVoice.isNotSlug {
+    opacity: 0%;
+}
+
+.indexVoicesContainer.isPage:hover > .isNotSlug {
+    opacity: 30%;
+}
+
+.indexVoicesContainer.isPage:hover > .isNotSlug:hover {
+    opacity: 100%;
+}
+
+
 a {
     text-decoration: none;
     color: none;
+    outline: none;
 }
 
 
@@ -161,8 +171,15 @@ a {
     transition: opacity 0.3s ease-in-out;
 }
 
-.galleryMaster {
+.galleryGrandfather {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
 
+.galleryMaster {
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -198,12 +215,23 @@ a {
     justify-content: center;
     align-items: center;
     flex: 1 0 0;
+    user-select: none;
 }
 
 .galleryImgContainer > img {
     width: 100%;
     height: 100%;
+    opacity: 100%;
     object-fit: contain;
+    transform: scale(1);
+    transition: opacity 1.4s ease-in-out, transform 3s cubic-bezier(0.95, 0.01, 0.58, 1);
+}
+
+.galleryImgContainer.Active > img {
+    transform: scale(0.4);
+    opacity: 30%;
+    object-fit: contain;
+    transition: opacity 1.4s ease-in-out, transform 3s cubic-bezier(0.95, 0.01, 0.58, 1);
 }
 
 
@@ -212,14 +240,26 @@ a {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+
+    justify-items: right;
     
     position: absolute;
-    left: 0px;
+    right: 0px;
     top: 0px;
     height: fit-content;
-    width: 50vw;
+    width: 30vw;
     padding: 20px;
     z-index: 10;
+}
+
+.descrizioni {
+    color: var(--BRAND-ORANGE, #FF5129);
+    font-feature-settings: 'cv02' on, 'ss14' on, 'ss03' on, 'ss06' on, 'ss10' on, 'dlig' on, 'ss04' on;
+    font-family: 'CormorantGaramond';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .DescriptionContainer {
@@ -227,42 +267,30 @@ a {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    width: 100%;
 }
 
 .DescriptionContainer > div {
-    width: 50%;
+    width: 100%;
 }
 
 .descriptionAbout {
-    opacity: 0;
+    opacity: 0%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
     width: 40%;
-    transition: opacity 0.8s ease-in-out;
+    transition: all 3s cubic-bezier(0.95, 0.01, 0.58, 1);
 }
 
-
-.descriptionAbout > .allWhiteCover {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 50%;
-    background-color: white;
-    z-index: -5;
-    display: none;
-}
-
-.show {
-    opacity: 1;
+.descriptionAbout.show {
+    opacity: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    transition: opacity 0.8s ease-in-out;
+    transition: all 3s cubic-bezier(0.95, 0.01, 0.58, 1);
 }
 
 .show > .allWhiteCover {
