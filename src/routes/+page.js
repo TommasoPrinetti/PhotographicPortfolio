@@ -3,56 +3,47 @@
 import { error } from '@sveltejs/kit';
 
 let capitoliFoto = [
+   {
+       titolo: "Monica & Paolo",
+       location: "San Colombano al Lambro",
+    },
     {
-        titolo: "Monica & Paolo",
-        location: "San Colombano al Lambro",
-        imgSrc: "MonicaEPaolo",
-     },
-     {
-        titolo: "Lucia & Stefano",
-        location: "Verona città metropolitana",
-        imgSrc: "LuciaEStefano",
-     },
-     {
-        titolo: "Lucia & Luca",
-        location: "Verona città metropolitana",
-        imgSrc: "LuciaELuca",
-     },
-     {
-        titolo: "At Carol Rama’s",
-        location: "Torino, Casa museo Carol Rama",
-        imgSrc: "AtCarolRama",
-     },
-     {
-        titolo: "Sinking",
-        location: "Milano, Studi PoliMi",
-        imgSrc: "Sinking",
-     },
-     {
-        titolo: "Atacama",
-        location: "Cave di Malnate",
-        imgSrc: "Atacama",
-     },
-     {
-        titolo: "Corporate events",
-        location: "Mixed locations",
-        imgSrc: "Corporate",
-     },
-     {
-        titolo: "Reportages",
-        location: "Mixed locations",
-        imgSrc: "Reportages",
-     },
-     {
-        titolo: "Lazza, Re Mida",
-        location: "Alcatraz, 2019",
-        imgSrc: "LazzaReMida",
-     },
-     {
-        titolo: "Curriculum vitae",
-        location: "",
-        imgSrc: "Curriculum",
-     }
+       titolo: "Lucia & Stefano",
+       location: "Verona città metropolitana",
+    },
+    {
+       titolo: "Lucia & Luca",
+       location: "Verona città metropolitana",
+    },
+    {
+       titolo: "At Carol Rama’s",
+       location: "Torino, Casa museo Carol Rama",
+    },
+    {
+       titolo: "Sinking",
+       location: "Milano, Studi PoliMi",
+    },
+    {
+       titolo: "Atacama",
+       location: "Cave di Malnate",
+    },
+    {
+       titolo: "Corporate events",
+       location: "Mixed locations",
+       imgSrc: "Corporate",
+    },
+    {
+       titolo: "Reportages",
+       location: "Mixed locations",
+    },
+    {
+       titolo: "Lazza, Re Mida",
+       location: "Alcatraz, 2019",
+    },
+    {
+       titolo: "Curriculum vitae",
+       location: "",
+    }
 ];
 
 //serve cambiare il parametro titolo sennò l'oggetto diventa titolo.titolo e fa confusione
