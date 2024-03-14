@@ -10,7 +10,7 @@ export let data;
 let hideDescription = true;
 
 async function toggleDescription() {
-        hideDescription = !hideDescription;
+    hideDescription = !hideDescription;
 }
 
 async function goToHome() {
@@ -29,10 +29,6 @@ const maxIndex = 10;
         }
     };
 
-//console.log("data", data)
-
-//console.log("test destructure", data.props.titolo )
-
 </script>
 
 <a class="aboutContainer" on:click={toggleDescription}>
@@ -44,7 +40,11 @@ const maxIndex = 10;
 </div>
 
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-missing-attribute -->
 <div class="galleryDescriptionMaster"> 
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <a class="backIntContainer" on:click={goToHome}>
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="10" viewBox="0 0 25 10" fill="none">
             <path d="M2.5 7.14286C3.30952 7.78572 4.08333 8.54762 4.82143 9.42857H7.57143C7.30952 8.71429 7 8.05952 6.64286 7.46429C6.37046 6.95841 4.3491 6.49229 3.41124 6.06591L4.36271 5.56873L13.0714 5.5L24.6547 5.8763L25 5.56873V3.76674L24.6547 3.4767L13.0714 3.76674H4.36271L3.49155 3.33805C4.45966 2.89516 6.378 2.43724 6.64286 1.96429C7 1.34524 7.30952 0.690476 7.57143 0H4.82143C3.36905 1.7381 1.7619 3.05953 0 3.96429V5.5C0.880952 5.92857 1.71429 6.47619 2.5 7.14286Z" fill="#FF5129"/>
@@ -69,7 +69,7 @@ const maxIndex = 10;
 
         <div class:descriptionAbout="{hideDescription ? 'show' : ''}">
             <p class="descrizioni">
-                La casa/studio di Carol Rama si colloca a Torino in un ambiente completamente oscuro e al riparo da ogni tipo di luce. Il lavoro d'indagine fotografica ha voluto prioritizzare l'intrusione della poca luce (artificiale) nella casa, e del suo rapporto con gli oggetti che assumono forme e silhouette appena percettibili.
+                {data.props.titolo.descrizione}
             </p>
             <div class="allWhiteCover">
 
