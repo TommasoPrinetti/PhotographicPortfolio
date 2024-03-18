@@ -27,7 +27,7 @@ let bioText = "Tommaso Prinetti, Photographer";
 </svelte:head>
 
 <div class="indexContainer">
-    <div>
+    <div class="nomeContainer">
         <p class="nome">
             TOMMASO PRINETTI <br>
             BASED IN MILAN, ITALY
@@ -36,21 +36,23 @@ let bioText = "Tommaso Prinetti, Photographer";
     <div class="indexVoicesContainer"> 
         {#each data.props.capitoliFoto as capitoloFoto, index}
             <a class="singleIndexVoice" href="/titoli/{capitoloFoto.titolo}">
+                <div class="firstIndexDiv">
                     <p class="dritto">
                         {index +1}.
                     </p>
+                </div>
+
+                <div class="secondIndexDiv">
                     <p class="obliqueo">
-                        {capitoloFoto.titolo}
+                        {capitoloFoto.titolo} 
                     </p>
                     <p class="dritto">
-                        -
+                        - {capitoloFoto.location}
                     </p>
-                    <p class="dritto">
-                        {capitoloFoto.location}
-                    </p>
+                </div> 
             </a>
                 <div class="absoluteImgContainer">
-                    <enhanced:img class="absoluteImg" src="images/{capitoloFoto.titolo}/thumb.jpg" alt={capitoloFoto.titolo}>
+                    <img class="absoluteImg" src="images/{capitoloFoto.titolo}/thumb.jpg" alt={capitoloFoto.titolo}>
                 </div>
         {/each}
     </div>
