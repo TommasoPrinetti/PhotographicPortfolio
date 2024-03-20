@@ -367,9 +367,27 @@ a {
     
 }
 
+.socialContainer {
+    display: none;
+}
+
+
 
 /* Media query for iPhone XR/11 and similar */
 @media only screen and (max-device-width: 420px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .socialContainer {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     a {
         text-decoration: none;
@@ -449,6 +467,11 @@ a {
     
     .singleIndexVoice:hover {
         opacity: 100%;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .singleIndexVoice:hover + .absoluteImgContainer  {
+        opacity: 0%;
         transition: opacity 0.3s ease-in-out;
     }
 
