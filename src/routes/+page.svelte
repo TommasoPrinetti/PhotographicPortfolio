@@ -23,7 +23,6 @@ let bioText = "Tommaso Prinetti, Photographer";
      
      <!-- Favicon -->
      <link rel="icon" href="/favicon.ico">
-
 </svelte:head>
 
 <div class="indexContainer">
