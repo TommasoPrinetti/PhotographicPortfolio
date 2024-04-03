@@ -3,7 +3,7 @@
 const capitoliFoto = []; 
 export let data;
 
-import websiteImage from "$lib/biopic.jpg"
+import websiteImage from "$lib/biopic.jpeg"
 
 let websiteUrl = "https://photographic-portfolio.vercel.app/";
 
