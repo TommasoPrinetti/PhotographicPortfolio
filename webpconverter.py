@@ -1,5 +1,4 @@
 import os
-import sys
 from PIL import Image
 from tqdm import tqdm
 import logging
@@ -12,7 +11,7 @@ logging.basicConfig(level=logging.INFO,
 # Define function to convert images to WebP format
 def convert_to_webp(folder):
     # Get a list of all image files in the folder and its subfolders
-    image_files = [os.path.join(folder, root, file) for root, _, files in os.walk(folder) for file in files if file.endswith(('.webp', '.jpeg', '.png'))]
+    image_files = [os.path.join(folder, root, file) for root, _, files in os.walk(folder) for file in files if file.endswith(('.jpg', '.jpeg', '.png', '.JPG'))]
 
     # Create a log file for errors
     error_log_file = "conversion_errors.log"
@@ -38,14 +37,9 @@ def convert_to_webp(folder):
 
 # Main function
 def main():
-    # Check if a folder path is provided as a command-line argument
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <folder_path>")
-        sys.exit(1)
-    
-    # Get the folder path from the command-line arguments
-    folder_path = sys.argv[1]
-    
+    # Prompt the user for the folder path
+    folder_path = input("Enter the folder path containing the images: ")
+
     # Call the function to convert images to WebP format
     convert_to_webp(folder_path)
     
