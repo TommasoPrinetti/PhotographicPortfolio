@@ -3,7 +3,7 @@
 const capitoliFoto = []; 
 export let data;
 
-import websiteImage from "$lib/biopic.jpg"
+import websiteImage from "$lib/biopic.webp"
 
 let websiteUrl = "https://photographic-portfolio.vercel.app/";
 
@@ -51,7 +51,7 @@ let bioText = "Tommaso Prinetti, Photographer";
                 </div> 
             </a>
                 <div class="absoluteImgContainer">
-                    <img class="absoluteImg" src="images/{capitoloFoto.titolo}/thumb.jpg" alt={capitoloFoto.titolo}>
+                    <img class="absoluteImg" src="images/{capitoloFoto.titolo}/thumb.webp" alt={capitoloFoto.titolo}>
                 </div>
         {/each}
     </div>

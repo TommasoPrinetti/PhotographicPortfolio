@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO,
 # Define function to convert images to WebP format
 def convert_to_webp(folder):
     # Get a list of all image files in the folder and its subfolders
-    image_files = [os.path.join(folder, root, file) for root, _, files in os.walk(folder) for file in files if file.endswith(('.jpg', '.jpeg', '.png'))]
+    image_files = [os.path.join(folder, root, file) for root, _, files in os.walk(folder) for file in files if file.endswith(('.webp', '.jpeg', '.png'))]
 
     # Create a log file for errors
     error_log_file = "conversion_errors.log"

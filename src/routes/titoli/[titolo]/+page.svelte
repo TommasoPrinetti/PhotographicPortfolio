@@ -11,7 +11,7 @@
 
     let hideDescription = true;
 
-    import websiteImage from "$lib/biopic.jpg"
+    import websiteImage from "$lib/biopic.webp"
 
     let websiteUrl = "https://photographic-portfolio.vercel.app/";
 
@@ -22,11 +22,11 @@
     let imgSrc;
 
     onMount(() => {
-        imgSrc = `/images/${data.props.titolo.titolo}/Gallery/img${currentIndex}.jpg`;
+        imgSrc = `/images/${data.props.titolo.titolo}/Gallery/img${currentIndex}.webp`;
     });
 
     afterUpdate(() => {
-        imgSrc = `/images/${data.props.titolo.titolo}/Gallery/img${currentIndex}.jpg`;
+        imgSrc = `/images/${data.props.titolo.titolo}/Gallery/img${currentIndex}.webp`;
     });
 
     async function toggleDescription() {
