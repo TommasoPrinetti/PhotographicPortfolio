@@ -11,7 +11,7 @@
 
     let hideDescription = true;
 
-    import websiteImage from "$lib/biopic.webp"
+    import websiteImage from "$lib/biopic.jpg"
 
     let websiteUrl = "https://photographic-portfolio.vercel.app/";
 
