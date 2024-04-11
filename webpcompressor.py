@@ -42,7 +42,7 @@ def optimize_images(folder, max_width=1920, max_height=1080):
                 # If the image is not a WebP image, convert it to WebP format
                 if not image_file.lower().endswith('.webp'):
                     webp_file = os.path.splitext(image_file)[0] + '.webp'
-                    img.save(webp_file, "webp", quality=50, lossless=False)  # Convert to WebP
+                    img.save(webp_file, "webp", quality=90, lossless=True)  # Convert to WebP
                 
                     # Get the size of the optimized WebP image file
                     optimized_size_kb = os.path.getsize(webp_file) / 1024
