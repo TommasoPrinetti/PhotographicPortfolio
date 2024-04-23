@@ -16,7 +16,7 @@ let capitoliFoto = [
        descrizione: {basicDescription},
     },
     {
-       titolo: "Jack & Chiara ",
+       titolo: "Jack & Chiara",
        location: "Salò",
        descrizione: {basicDescription},
     },
