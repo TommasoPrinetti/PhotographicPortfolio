@@ -8,20 +8,22 @@ let basicDescription = "Credo che il punto sia che la realtà di per sè accade.
 
 let capitoliFoto = [
    {
-       titolo: "Monica & Paolo",
-       location: "Inzago",
-       descrizione: {basicDescription},
-    },
-    {
+      titolo: "Jack & Chiara",
+      location: "Salò",
+      descrizione: {basicDescription},
+   },
+   
+   {
        titolo: "Lucia & Stefano",
        location: "Verona città",
        descrizione: {basicDescription},
-    },
-    {
-       titolo: "Jack & Chiara",
-       location: "Salò",
-       descrizione: {basicDescription},
-    },
+   },
+    
+   {
+      titolo: "Monica & Paolo",
+      location: "Inzago",
+      descrizione: {basicDescription},
+   },
     {
        titolo: "At Carol Rama’s",
        location: "Torino, Casa museo Carol Rama",
