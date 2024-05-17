@@ -1,10 +1,3 @@
-/** @type {import('./$types').PageLoad} */
-
-// +page.js [titolo]
-
-import { error } from '@sveltejs/kit';
-
-let basicDescription = "Credo che il punto sia che la realtà di per sè accade. E che abbiamo perso molto, nel tempo, la relazione con ciò che è fuori di noi. Le persone, gli spazi. La mia fotografia vuole essere strumento per questo, per la riconquista dei rapporti con il 'fuori di noi'. Per rifondare dei legami solidi con la realtà, che accade, ogni istante."
 
 let capitoliFoto = [
    {
@@ -50,6 +43,21 @@ let capitoliFoto = [
        location: "Alcatraz, 2019",
        descrizione: "Il secondo concerto di Lazza. Il mio primo, e l'ultimo prima dello stop dovuto al Covid. Tre ore e mezza di concerto, il suo primo vero live. ",
     },
+    {
+      titolo: "TutelaLegale",
+      location: "Fond. Feltrinelli",
+      descrizione: "",
+   },
+   {
+      titolo: "CWC 2023",
+      location: "Milano, Pirellone",
+      descrizione: "",
+   },
+   {
+      titolo: "Telefono Azzurro 2023",
+      location: "Milano, Politecnico",
+      descrizione: "",
+   },
    {
       titolo: "MilanoCityMarathon",
       location: "Milano - Piazza del Duomo",
@@ -66,16 +74,3 @@ let capitoliFoto = [
        descrizione: "Sono io, Tommaso :)",
     }
 ];
-
-export async function load({ params }) {
-   const titoloSlug = decodeURIComponent(params.titolo); 
-
-   const foundTitolo = capitoliFoto.find(titolo => titolo.titolo === titoloSlug); 
-
-   return {
-       props: {
-           titolo: foundTitolo,
-           capitoliFoto: capitoliFoto,
-       }
-   };
-}

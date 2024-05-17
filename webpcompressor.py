@@ -72,8 +72,6 @@ def optimize_images(folder, max_width=2400, max_height=1600):
     # Log the total kilobytes saved
     logging.info(f"Total KB saved: {total_kb_saved:.2f} KB")
 
-
-
 # Main function
 def main():
     # Specify the folder containing the images

@@ -22,11 +22,17 @@ let capitoliFoto = [
       location: "Inzago",
       descrizione: {basicDescription},
    },
+   {
+      titolo: "Ordinazioni sacerdotali '23",
+      location: "Roma, San Paolo Fuori le Mura",
+      descrizione: ""
+    },
     {
        titolo: "At Carol Rama’s",
        location: "Torino, Casa museo Carol Rama",
        descrizione: "La casa/studio di Carol Rama si colloca a Torino in un ambiente completamente oscuro e al riparo da ogni tipo di luce. Il lavoro d'indagine fotografica ha voluto prioritizzare l'intrusione della poca luce (artificiale) nella casa, e del suo rapporto con gli oggetti che assumono forme e silhouette appena percettibili.",
     },
+    
     {
        titolo: "Sinking",
        location: "Milano, Studi PoliMi",
@@ -42,11 +48,6 @@ let capitoliFoto = [
        location: "Alcatraz, 2019",
        descrizione: "Il secondo concerto di Lazza. Il mio primo, e l'ultimo prima dello stop dovuto al Covid. Tre ore e mezza di concerto, il suo primo vero live. ",
     },
-    {
-      titolo: "TutelaLegale",
-      location: "Fond. Feltrinelli",
-      descrizione: "",
-   },
    {
       titolo: "MilanoCityMarathon",
       location: "Milano - Piazza del Duomo",
