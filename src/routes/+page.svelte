@@ -22,7 +22,7 @@ let bioText = "Tommaso Prinetti, Photographer";
      <meta property="og:type" content="portfolio">
      
      <!-- Favicon -->
-     <link rel="icon" href="/favicon.ico">
+     <link rel="icon" href="/favicon.webp">
 </svelte:head>
 
 <div class="indexContainer">

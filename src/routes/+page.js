@@ -6,6 +6,12 @@ let basicDescription = "Credo che il punto sia che la realtà di per sè accade.
 
 let capitoliFoto = [
    {
+      titolo: "Moni & Gio",
+      location: "Grottaglie, Salento",
+      descrizione: {basicDescription},
+   },
+   
+   {
       titolo: "Jack & Chiara",
       location: "Salò",
       descrizione: {basicDescription},
