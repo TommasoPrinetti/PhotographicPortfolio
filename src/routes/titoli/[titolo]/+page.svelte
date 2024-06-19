@@ -7,6 +7,8 @@
 
     let aboutText = "About It";
 
+    const basicDescription = "Credo che il punto sia che la realtà di per sè accade. E che abbiamo perso molto, nel tempo, la relazione con ciò che è fuori di noi. Le persone, gli spazi. La mia fotografia vuole essere strumento per questo, per la riconquista dei rapporti con il 'fuori di noi'. Per rifondare dei legami solidi con la realtà, che accade, ogni istante."
+
     let currentIndex = 1;
 
     let hideDescription = true;
@@ -49,18 +51,43 @@
         console.log("clicked");
     }
 
-    const maxIndex = 10;
+    const maxIndex = 30;
 
-    const updateIndex = (increment) => {
-        currentIndex += increment;
-        if (currentIndex < 1) {
-            currentIndex = maxIndex;
-        } else if (currentIndex > maxIndex) {
-            currentIndex = 1;
-        }
-        console.log("IndexUpdated");
-        currentIndex = currentIndex;
+    const imageExists = (imagePath) => {
+        return fetch(imagePath, { method: 'HEAD' })
+            .then(res => res.ok)
+            .catch(() => false);
     };
+
+    const updateIndex = async (increment) => {
+        let newIndex = currentIndex + increment;
+        if (newIndex < 1) {
+            newIndex = maxIndex;
+        } else if (newIndex > maxIndex) {
+            newIndex = 1;
+        }
+
+        // Check if the image exists
+        const imagePath = `/images/${data.props.titolo.titolo}/Gallery/img${newIndex}.webp`;
+        const exists = await imageExists(imagePath);
+
+        if (exists) {
+            currentIndex = newIndex;
+            console.log("IndexUpdated to", currentIndex);
+
+        } else {
+            console.log(`Image img${newIndex}.webp not found, skipping to the first image`);
+            currentIndex = 1;
+            const firstImagePath = `/images/${data.props.titolo.titolo}/Gallery/img1.webp`;
+            const firstImageExists = await imageExists(firstImagePath);
+            
+            if (firstImageExists) {
+                console.log("IndexUpdated to first image");
+            } else {
+                console.log("No valid images found");
+            }
+        }
+    }
 
     const handleNavigation = async (url) => {
         if (resizeImg) {
@@ -108,7 +135,7 @@
     <div class="DescriptionContainer">
         <div class="descriptionAbout {hideDescription ? '' : 'show'}">
             <p class="descrizioni">
-                {data.props.titolo.descrizione}
+                {basicDescription}
             </p>
         </div>
     </div>

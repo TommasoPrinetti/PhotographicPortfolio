@@ -4,13 +4,19 @@
 
 import { error } from '@sveltejs/kit';
 
-let basicDescription = "Credo che il punto sia che la realtà di per sè accade. E che abbiamo perso molto, nel tempo, la relazione con ciò che è fuori di noi. Le persone, gli spazi. La mia fotografia vuole essere strumento per questo, per la riconquista dei rapporti con il 'fuori di noi'. Per rifondare dei legami solidi con la realtà, che accade, ogni istante."
+const basicDescription = "Credo che il punto sia che la realtà di per sè accade. E che abbiamo perso molto, nel tempo, la relazione con ciò che è fuori di noi. Le persone, gli spazi. La mia fotografia vuole essere strumento per questo, per la riconquista dei rapporti con il 'fuori di noi'. Per rifondare dei legami solidi con la realtà, che accade, ogni istante."
 
 let capitoliFoto = [
 
    {
       titolo: "Moni & Gio",
       location: "Grottaglie, Salento",
+      descrizione: {basicDescription},
+   },
+
+   {
+      titolo: "Anna & Jaco",
+      location: "Milano, Niguarda",
       descrizione: {basicDescription},
    },
 

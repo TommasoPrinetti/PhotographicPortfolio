@@ -10,6 +10,12 @@ let capitoliFoto = [
       location: "Grottaglie, Salento",
       descrizione: {basicDescription},
    },
+
+   {
+      titolo: "Anna & Jaco",
+      location: "Milano, Niguarda",
+      descrizione: {basicDescription},
+   },
    
    {
       titolo: "Jack & Chiara",
